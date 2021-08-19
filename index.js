@@ -168,7 +168,13 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
-    
+    const maxGallons = this.tankSize - this.tank
+    if (gallons <= maxGallons) {
+      this.tank = this.tank + gallons
+    } else {
+      this.tank = this.tankSize
+    }
+    return this.tank * this.mpg
   }
 }
 
@@ -187,8 +193,9 @@ class Car {
  */
 function isEvenNumberAsync(number) {
   // ✨ implement
-}
+  return number % 2 ===0 ||false
 
+}
 module.exports = {
   trimProperties,
   trimPropertiesMutation,
